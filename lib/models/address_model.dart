@@ -1,41 +1,41 @@
 import 'dart:convert';
 
 class AddressModel {
-  final String zipCode;
-  final String address;
-  final String complement;
-  final String neighborhood;
-  final String city;
-  final String state;
+  final String cep;
+  final String logradouro;
+  final String complemento;
+  final String bairro;
+  final String localidade;
+  final String uf;
 
   AddressModel({
-    required this.zipCode,
-    required this.address,
-    required this.complement,
-    required this.neighborhood,
-    required this.city,
-    required this.state,
+    required this.cep,
+    required this.logradouro,
+    required this.complemento,
+    required this.bairro,
+    required this.localidade,
+    required this.uf,
   });
 
   Map<String, dynamic> toMap(){
     return {
-      'zipCode': zipCode,
-      'address': address,
-      'complement': complement,
-      'neighborhood': neighborhood,
-      'city': city,
-      'state': state,
+      'cep': cep,
+      'logradouro': logradouro,
+      'complemento': complemento,
+      'bairro': bairro,
+      'localidade': localidade,
+      'uf': uf,
     };
   }
 
-  factory AddressModel.fromMap(Map<String, dynamic> map){
+  factory AddressModel.fromMap(Map<String, dynamic> map) {
     return AddressModel(
-      zipCode: map['zipCode'] ?? '',
-      address: map['address'] ?? '',
-      complement: map['complement'] ?? '',
-      neighborhood: map['neigborhood'] ?? '',
-      city: map['city'] ?? '',
-      state: map['map'] ?? '',
+      cep: map['cep'] ?? '',
+      logradouro: map['logradouro'] ?? '',
+      complemento: map['complemento'] ?? '',
+      bairro: map['bairro'] ?? '',
+      localidade: map['localidade'] ?? '',
+      uf: map['uf'] ?? '',
     );
   }
 
